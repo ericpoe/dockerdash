@@ -15,7 +15,7 @@ Encore
   .enableVueLoader()
   .addEntry("js/app", "./assets/js/app.js")
   .enablePostCssLoader()
-  .addStyleEntry('css/app', './assets/css/app.scss')
+  .addStyleEntry("css/app", "./assets/css/app.scss")
 
   // uncomment if you use Sass/SCSS files
   .enableSassLoader(function(sassOptions) {}, {
