@@ -22,5 +22,6 @@ Encore
 
 // uncomment for legacy applications that require $/jQuery as a global variable
 // .autoProvidejQuery()
+;
 
 module.exports = Encore.getWebpackConfig();
