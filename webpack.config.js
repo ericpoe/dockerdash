@@ -13,7 +13,7 @@ Encore
   // uncomment to create hashed filenames (e.g. app.abc123.css)
   .enableVersioning(Encore.isProduction())
   .enableVueLoader()
-  .addEntry("js/app", "./assets/js/main.js")
+  .addEntry("js/app", "./assets/js/app.js")
   .enablePostCssLoader()
 // .addStyleEntry('css/app', './assets/css/app.scss')
 
