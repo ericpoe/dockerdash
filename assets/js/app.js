@@ -1,6 +1,7 @@
 import Vue from "vue";
+import Example from "./components/Example";
 
 new Vue({
   el: "#app",
-  template: "<App/>"
+  components: { Example }
 });
