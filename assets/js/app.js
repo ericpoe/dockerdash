@@ -1,7 +1,7 @@
 import Vue from "vue";
-import Example from "./components/Example";
+import Dashboard from "./components/Dashboard";
 
 new Vue({
   el: "#app",
-  components: { Example }
+  components: { Dashboard }
 });
