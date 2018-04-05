@@ -1,4 +1,13 @@
 {
+    "clue/stream-filter": {
+        "version": "v1.4.0"
+    },
+    "docker-php/docker-php": {
+        "version": "v2.0.0"
+    },
+    "docker-php/docker-php-api": {
+        "version": "v4.1.36.1"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -23,14 +32,59 @@
     "doctrine/lexer": {
         "version": "v1.0.1"
     },
+    "guzzlehttp/psr7": {
+        "version": "1.4.2"
+    },
+    "jane-php/json-schema-runtime": {
+        "version": "v4.0.1"
+    },
+    "jane-php/open-api-runtime": {
+        "version": "v4.0.1"
+    },
+    "jeremykendall/php-domain-parser": {
+        "version": "3.0.0"
+    },
+    "league/uri": {
+        "version": "4.2.2"
+    },
     "nikic/php-parser": {
         "version": "v4.0.1"
+    },
+    "php-http/client-common": {
+        "version": "1.7.0"
+    },
+    "php-http/discovery": {
+        "version": "1.4.0"
+    },
+    "php-http/httplug": {
+        "version": "v1.1.0"
+    },
+    "php-http/message": {
+        "version": "1.6.0"
+    },
+    "php-http/message-factory": {
+        "version": "v1.0.2"
+    },
+    "php-http/multipart-stream-builder": {
+        "version": "1.0.0"
+    },
+    "php-http/promise": {
+        "version": "v1.0.0"
+    },
+    "php-http/socket-client": {
+        "version": "v1.4.0"
+    },
+    "php-jsonpointer/php-jsonpointer": {
+        "version": "v3.0.2"
     },
     "psr/cache": {
         "version": "1.0.1"
     },
     "psr/container": {
         "version": "1.0.0"
+    },
+    "psr/http-message": {
+        "version": "1.0.1"
     },
     "psr/log": {
         "version": "1.0.2"
@@ -119,6 +173,9 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/options-resolver": {
+        "version": "v4.0.7"
+    },
     "symfony/phpunit-bridge": {
         "version": "3.3",
         "recipe": {
@@ -142,6 +199,9 @@
             "version": "4.0",
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
+    },
+    "symfony/serializer": {
+        "version": "v4.0.7"
     },
     "symfony/twig-bridge": {
         "version": "v4.0.6"
