@@ -51,9 +51,9 @@ export default {
         .then(response => {
           self.sysInfo = response.data;
         })
-        .catch(error =>
-          console.log("Error getting docker's sysinfo: %o", error)
-        );
+        .catch(error => {
+          console.log("Error getting docker's sysinfo: %o", error);
+        });
     }
   }
 };
