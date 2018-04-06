@@ -6,6 +6,7 @@ use Docker\Docker;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 
 /**
@@ -15,9 +16,9 @@ class DockerController extends Controller
 {
     /**
      * @Route("/")
-     * @Method("GET")
+     * @Method({"GET"})
      */
-    public function index()
+    public function index() : JsonResponse
     {
         $docker = Docker::create();
 
