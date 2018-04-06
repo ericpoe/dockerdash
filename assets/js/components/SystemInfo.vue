@@ -23,21 +23,38 @@ import axios from "axios";
 
 export default {
   name: "SystemInfo",
-  data() {
+  data: function() {
     return {
       sysInfo: {}
     };
   },
 
-  created() {
-    let self = this;
+  mounted: function() {
+    // initial load
+    this.loadData();
 
-    axios
-      .get("/docker")
-      .then(response => {
-        self.sysInfo = response.data;
-      })
-      .catch(error => console.log("Error getting docker's sysinfo: %o", error));
+    // run every 30 seconds
+    setInterval(
+      function() {
+        this.loadData();
+      }.bind(this),
+      30000
+    );
+  },
+
+  methods: {
+    loadData: function() {
+      let self = this;
+
+      axios
+        .get("/docker")
+        .then(response => {
+          self.sysInfo = response.data;
+        })
+        .catch(error =>
+          console.log("Error getting docker's sysinfo: %o", error)
+        );
+    }
   }
 };
 </script>
