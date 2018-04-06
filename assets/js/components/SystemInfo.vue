@@ -8,8 +8,7 @@
     <span
       id="Containers"
       class="px-2">
-      <strong class="font-bold">Containers: </strong> {{ sysInfo.containers || 0 }}
-      <strong class="font-bold">Containers Running: </strong> {{ sysInfo.containersrunning || 0 }}
+      <strong class="font-bold">Containers Running: </strong> {{ sysInfo.containersRunning || 0 }} / {{ sysInfo.containers || 0 }}
     </span>
     <span
       id="Images"
