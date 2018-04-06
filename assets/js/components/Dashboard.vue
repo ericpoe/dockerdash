@@ -2,13 +2,16 @@
   <div
     id="outerContainer"
     class="container mx-auto p-4 bg-grey-light">
-    <header class="flex w-full items-baseline border-b border-grey-darker p-1 text-grey-lightest">
-      <div
-        id="title"
-        class="w-1/3 text-left"><h1>DockerDash</h1></div>
-      <div
-        id="userInfo"
-        class="w-2/3 text-right"><p>Login</p></div>
+    <header class="w-full border-b border-grey-darker text-grey-lightest">
+      <div class="flex items-baseline">
+        <div
+          id="title"
+          class="w-1/3 text-left"><h1>DockerDash</h1></div>
+        <div
+          id="userInfo"
+          class="w-2/3 text-right"><p>Login</p></div>
+      </div>
+      <SystemInfo/>
     </header>
     <div
       id="content"
@@ -19,7 +22,6 @@
       <div
         id="mainBody"
         class="w-5/6 my-2 ml-2 mr-2 bg-grey-dark">
-        <SystemInfo/>
         <p :class="tailwind.odd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
         accusantium ad consectetur, deserunt dignissimos, dolorum eligendi eum
         illum laudantium nesciunt possimus quisquam repudiandae? Adipisci amet
