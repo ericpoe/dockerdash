@@ -22,6 +22,7 @@
       <div
         id="mainBody"
         class="w-5/6 my-2 ml-2 mr-2 bg-grey-dark">
+        <ContainersInfoGrid />
         <p :class="tailwind.odd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
         accusantium ad consectetur, deserunt dignissimos, dolorum eligendi eum
         illum laudantium nesciunt possimus quisquam repudiandae? Adipisci amet
@@ -83,10 +84,11 @@
 
 <script>
 import SystemInfo from "./SystemInfo";
+import ContainersInfoGrid from "./ContainersInfoGrid";
 
 export default {
   name: "Dashboard",
-  components: { SystemInfo },
+  components: {ContainersInfoGrid, SystemInfo },
   computed: {
     tailwind() {
       return {

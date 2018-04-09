@@ -21,6 +21,6 @@ class ContainerController extends Controller
     {
         $docker = Docker::create();
 
-        return $this->json($docker->containerList());
+        return $this->json($docker->containerList(["all" => true, "size"=>true]));
     }
 }
