@@ -4,9 +4,11 @@
     class="table"
   >
     <thead>
-      <tr id="ContainersInfoGridHeader">
-        <th id="headerContainerId">ID</th>
-        <th id="headerContainerNames">Names</th>
+      <tr
+        id="ContainersInfoGridHeader"
+        class="align-bottom"
+      >
+        <th id="headerContainerNames">Name(s)</th>
         <th id="headerContainerImage">Image</th>
         <th id="headerContainerState">State</th>
         <th id="headerContainerStatus">Status</th>
@@ -17,20 +19,19 @@
     <tbody>
       <tr
         id="rowContainerInfoGridRows"
-        class=""
+        class="align-text-top"
         v-for="item in containersInfo"
       >
-        <td class="">{{ item.id }}</td>
-        <td class="">
+        <td class="px-2">
           <ul class="list-reset">
-            <li v-for="element in item.names">{{ element }}</li>
+            <li v-for="element in item.names">{{ element.replace("/", "") | truncate(12) }}</li>
           </ul>
         </td>
-        <td class="">{{ item.image }}</td>
-        <td class="">{{ item.state }}</td>
-        <td class="">{{ item.status }}</td>
-        <td class="">{{ new Date(item.created * 1000).toISOString() }}</td>
-        <td class="">{{ item.command }}</td>
+        <td class="px-2">{{ item.image | truncate(20) }}</td>
+        <td class="px-2">{{ item.state }}</td>
+        <td class="px-2">{{ item.status }}</td>
+        <td class="px-2 whitespace-pre">{{ new Date(item.created * 1000).toISOString().replace(".000Z", "Z").replace("T", "\n") }}</td>
+        <td class="px-2">{{ item.command | truncate(30) }}</td>
       </tr>
     </tbody>
   </table>
