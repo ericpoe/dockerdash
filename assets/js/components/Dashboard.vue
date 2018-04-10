@@ -84,11 +84,11 @@
 
 <script>
 import SystemInfo from "./SystemInfo";
-import ContainersInfoGrid from "./ContainersInfoGrid";
+import ContainersInfoGrid from "./container/ContainersInfoGrid";
 
 export default {
   name: "Dashboard",
-  components: {ContainersInfoGrid, SystemInfo },
+  components: { ContainersInfoGrid, SystemInfo },
   computed: {
     tailwind() {
       return {
