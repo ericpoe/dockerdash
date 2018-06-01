@@ -6,7 +6,7 @@
     <thead>
       <tr
         id="ContainersInfoGridHeader"
-        class="align-bottom"
+        class="align-bottom bg-grey-darkest text-grey-lighter"
       >
         <th id="headerContainerNames">Name(s)</th>
         <th id="headerContainerImage">Image</th>
@@ -51,8 +51,8 @@ export default {
   computed: {
     tailwind() {
       return {
-        odd: "bg-grey-darkest text-grey-lighter my-2",
-        even: "bg-grey-darker text-grey-lighter my-2"
+        odd: "bg-grey-darker text-grey-lighter my-2",
+        even: "bg-grey-dark text-grey-lighter my-2"
       };
     }
   },
@@ -85,4 +85,5 @@ export default {
     }
   }
 };
+
 </script>
