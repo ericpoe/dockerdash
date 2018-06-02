@@ -45,14 +45,6 @@ import ContainersInfoGrid from "./container/ContainersInfoGrid";
 
 export default {
   name: "Dashboard",
-  components: { ContainersInfoGrid, SystemInfo },
-  computed: {
-    tailwind() {
-      return {
-        odd: "bg-grey-darkest text-grey-lighter my-2",
-        even: "bg-grey-lighter text-grey-darkest my-2"
-      };
-    }
-  }
+  components: { ContainersInfoGrid, SystemInfo }
 };
 </script>

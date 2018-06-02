@@ -60,3 +60,14 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+tr:nth-child(even) {
+    @apply .bg-grey-darker .text-grey-lighter;
+}
+
+tr:nth-child(odd) {
+    @apply .bg-grey-dark .text-grey-light;
+}
+
+th {
+    @apply .bg-grey-darkest .text-grey-light;
+}

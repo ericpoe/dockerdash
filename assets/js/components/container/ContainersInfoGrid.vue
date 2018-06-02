@@ -48,15 +48,6 @@ export default {
     };
   },
 
-  computed: {
-    tailwind() {
-      return {
-        odd: "bg-grey-darker text-grey-lighter my-2",
-        even: "bg-grey-dark text-grey-lighter my-2"
-      };
-    }
-  },
-
   mounted: function() {
     // initial load
     this.loadData();
