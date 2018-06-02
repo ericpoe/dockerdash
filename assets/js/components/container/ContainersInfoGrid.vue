@@ -18,9 +18,9 @@
     </thead>
     <tbody>
       <tr
+        v-for="item in containersInfo"
         id="rowContainerInfoGridRows"
         class="align-text-top"
-        v-for="item in containersInfo"
       >
         <td class="px-2">
           <ul class="list-reset">
