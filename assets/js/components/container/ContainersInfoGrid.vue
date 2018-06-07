@@ -30,7 +30,7 @@
         <td class="px-2">{{ item.image | truncate(20) }}</td>
         <td class="px-2">{{ item.state }}</td>
         <td class="px-2">{{ item.status }}</td>
-        <td class="px-2 whitespace-pre">{{ new Date(item.created * 1000).toISOString().replace(".000Z", "Z").replace("T", "\n") }}</td>
+        <td class="px-2 whitespace-pre">{{ formatDate(item.created) }}</td>
         <td class="px-2">{{ item.command | truncate(30) }}</td>
       </tr>
     </tbody>
@@ -73,8 +73,14 @@ export default {
         .catch(error => {
           console.log("Error getting docker containers: %o", error);
         });
+    },
+
+    formatDate: function(timeStamp) {
+      return new Date(timeStamp * 1000)
+        .toISOString()
+        .replace(".000Z", "Z")
+        .replace("T", "\n");
     }
   }
 };
-
 </script>
