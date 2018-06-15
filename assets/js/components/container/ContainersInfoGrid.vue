@@ -8,17 +8,17 @@
         id="ContainersInfoGridHeader"
         class="align-bottom bg-grey-darkest text-grey-lighter"
       >
-        <th id="headerContainerNames">Name(s)</th>
-        <th id="headerContainerImage">Image</th>
-        <th id="headerContainerState">State</th>
-        <th id="headerContainerStatus">Status</th>
-        <th id="headerContainerCreated">Date Created</th>
-        <th id="headerContainerCommand">Command</th>
+        <th id="headerContainerNames" @click="sort('names')">Name(s)</th>
+        <th id="headerContainerImage" @click="sort('image')">Image</th>
+        <th id="headerContainerState" @click="sort('state')">State</th>
+        <th id="headerContainerStatus" @click="sort('status')">Status</th>
+        <th id="headerContainerCreated" @click="sort('created')">Date Created</th>
+        <th id="headerContainerCommand" @click="sort('command')">Command</th>
       </tr>
     </thead>
     <tbody>
       <tr
-        v-for="item in containersInfo"
+        v-for="item in sortedContainers"
         id="rowContainerInfoGridRows"
         class="align-text-top"
       >
@@ -44,8 +44,23 @@ export default {
   name: "ContainersInfoGrid",
   data: function() {
     return {
-      containersInfo: {}
+      containersInfo: [],
+      currentSort: "created",
+      currentSortDir: "desc"
     };
+  },
+
+  computed: {
+    sortedContainers: function() {
+      return this.containersInfo.sort((a, b) => {
+        let modifier = 1;
+        if (this.currentSortDir === "desc") modifier = -1;
+        if (a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
+        if (a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
+
+        return 0;
+      });
+    }
   },
 
   mounted: function() {
@@ -80,6 +95,19 @@ export default {
         .toISOString()
         .replace(".000Z", "Z")
         .replace("T", "\n");
+    },
+
+    /**
+     * Sort function
+     *
+     * Liberally borrowed from https://www.raymondcamden.com/2018/02/08/building-table-sorting-and-pagination-in-vuejs
+     */
+    sort: function(s) {
+      //if s == current sort, reverse
+      if (s === this.currentSort) {
+        this.currentSortDir = this.currentSortDir === "asc" ? "desc" : "asc";
+      }
+      this.currentSort = s;
     }
   }
 };
