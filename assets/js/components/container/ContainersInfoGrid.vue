@@ -52,13 +52,17 @@ export default {
 
   computed: {
     sortedContainers: function() {
-      return this.containersInfo.sort((a, b) => {
-        let modifier = 1;
-        if (this.currentSortDir === "desc") modifier = -1;
-        if (a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
-        if (a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
+      let item = this.currentSort;
 
-        return 0;
+      let me = this;
+
+      return me.containersInfo.sort((a, b) => {
+        let modifier = me.currentSortDir === "asc" ? 1 : -1;
+        let sortPlacement = a[item] < b[item] ? -1
+                          : a[item] > b[item] ? 1
+                          : 0;
+
+        return sortPlacement * modifier;
       });
     }
   },
