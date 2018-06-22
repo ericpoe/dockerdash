@@ -1,7 +1,7 @@
 <template>
   <table
     id="ContainersInfoGrid"
-    class="table"
+    class="table w-full"
   >
     <thead>
       <tr
@@ -22,16 +22,16 @@
         id="rowContainerInfoGridRows"
         class="align-text-top"
       >
-        <td class="px-2">
+        <td class="px-2 -mx-2">
           <ul class="list-reset">
             <li v-for="element in item.names">{{ element.replace("/", "") | truncate(12) }}</li>
           </ul>
         </td>
-        <td class="px-2">{{ item.image | truncate(20) }}</td>
-        <td class="px-2">{{ item.state }}</td>
-        <td class="px-2">{{ item.status }}</td>
-        <td class="px-2 whitespace-pre">{{ formatDate(item.created) }}</td>
-        <td class="px-2">{{ item.command | truncate(30) }}</td>
+        <td class="px-2 -mx-2">{{ item.image | truncate(20) }}</td>
+        <td class="px-2 -mx-2">{{ item.state }}</td>
+        <td class="px-2 -mx-2">{{ item.status }}</td>
+        <td class="px-2 -mx-2 whitespace-pre">{{ formatDate(item.created) }}</td>
+        <td class="px-2 -mx-2">{{ item.command | truncate(30) }}</td>
       </tr>
     </tbody>
   </table>
