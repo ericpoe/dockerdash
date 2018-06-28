@@ -2,6 +2,7 @@
 
 * A basic dashboard structure
     * Should have mobile view, too
+    * Aim for A11y
 * ~~Always visible system info~~
 * PurgeCSS - to reduce size of CSS file
 * Show stats:
@@ -14,6 +15,7 @@
     * images
     * volumes
 * Logged-in Admin can view and take action on containers/images/volumes
+* Run in a Docker container
 
 # Nice to Have
 
