@@ -8,11 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-
 /**
- * @Route("/docker")
+ * @Route("/containers")
  */
-class DockerController extends Controller
+class ContainerController extends Controller
 {
     /**
      * @Route("/")
@@ -22,6 +21,6 @@ class DockerController extends Controller
     {
         $docker = Docker::create();
 
-        return $this->json($docker->systemInfo());
+        return $this->json($docker->containerList(["all" => true, "size"=>true]));
     }
 }
